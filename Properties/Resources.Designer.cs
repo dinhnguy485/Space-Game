@@ -63,9 +63,9 @@ namespace Space_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap German {
+        internal static System.Drawing.Bitmap bulletLeft {
             get {
-                object obj = ResourceManager.GetObject("German", resourceCulture);
+                object obj = ResourceManager.GetObject("bulletLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,29 @@ namespace Space_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap US {
+        internal static System.Drawing.Bitmap bulletRight {
             get {
-                object obj = ResourceManager.GetObject("US", resourceCulture);
+                object obj = ResourceManager.GetObject("bulletRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plane1 {
+            get {
+                object obj = ResourceManager.GetObject("Plane1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plane2 {
+            get {
+                object obj = ResourceManager.GetObject("plane2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -15,21 +15,21 @@ namespace Space_Game
     public partial class MainForm : Form
     {
         Random randGen = new Random();
-        Rectangle player1 = new Rectangle(200, 375, 20, 20);
-        Rectangle player2 = new Rectangle(470, 375, 20, 20);
+        Rectangle player1 = new Rectangle(150, 375, 40, 35);
+        Rectangle player2 = new Rectangle(500, 375, 40, 35);
         Rectangle time = new Rectangle(345, 0, 10, 700);
 
         List<Rectangle> planetListRight = new List<Rectangle>();
         List<Rectangle> planetListLeft = new List<Rectangle>();
-        List<int> planetSpeed = new List<int>();
+        List<int> planetSpeedRight = new List<int>();
+        List<int> planetSpeedLeft = new List<int>();
         List<int> planetSize = new List<int>();
-
 
         int player1Score = 0;
         int player2Score = 0;
         int playerSpeed = 4;
         int planetSpeeds = 4;
-        int timeSpeed = 1;
+       int  timeSpeed = 1;
         int randValue;
         int randX;
 
@@ -42,8 +42,10 @@ namespace Space_Game
 
         SolidBrush whiteBrush = new SolidBrush(Color.White);
         SolidBrush yellowBrush = new SolidBrush(Color.Yellow);
-        Image Allies = Properties.Resources.US;
-        Image Axis = Properties.Resources.German;
+        Image Allies = Properties.Resources.Plane1;
+        Image Axis = Properties.Resources.plane2;
+        Image bulletRight = Properties.Resources.bulletRight;
+        Image bulletLeft = Properties.Resources.bulletLeft;
 
         public MainForm()
         {
@@ -119,6 +121,7 @@ namespace Space_Game
                 if (player1.IntersectsWith(planetListRight[i]))
                 {
                     player1.Y = 375;
+                    planetListRight.RemoveAt(i);
                 }
                 else if (player1.Y <= 0)
                 {
@@ -129,6 +132,7 @@ namespace Space_Game
                 if (player2.IntersectsWith(planetListRight[i]))
                 {
                     player2.Y = 375;
+                    planetListRight.RemoveAt(i);
                 }
                 else if (player2.Y <= 0)
                 {
@@ -142,6 +146,7 @@ namespace Space_Game
                 if (player1.IntersectsWith(planetListLeft[i]))
                 {
                     player1.Y = 375;
+                    planetListLeft.RemoveAt(i);
                 }
                 else if (player1.Y <= 0)
                 {
@@ -152,6 +157,8 @@ namespace Space_Game
                 if (player2.IntersectsWith(planetListLeft[i]))
                 {
                     player2.Y = 375;
+                    planetListLeft.RemoveAt(i);
+
                 }
                 else if (player2.Y <= 0)
                 {
@@ -167,21 +174,21 @@ namespace Space_Game
             {
 
                 int x = planetListRight[i].X + planetSpeeds;
-                planetListRight[i] = new Rectangle(x, planetListRight[i].Y, 30, 5);
+                planetListRight[i] = new Rectangle(x, planetListRight[i].Y, 30, 20);
             }
 
             for (int i = 0; i < planetListLeft.Count; i++)
             {
 
                 int x = planetListLeft[i].X - planetSpeeds;
-                planetListLeft[i] = new Rectangle(x, planetListLeft[i].Y, 30, 5);
+                planetListLeft[i] = new Rectangle(x, planetListLeft[i].Y, 30, 20);
             }
         }
 
         private void HandleTimer()
         {
             time.Y += timeSpeed;
-            if (time.Y >= this.Height)
+            if (time.Y >= this.Height + 1)
             {
                 gameTimer.Stop();
             }
@@ -190,18 +197,18 @@ namespace Space_Game
         private void PlanetSpawning()
         {
             randValue = randGen.Next(0, 100);
-            if (randValue < 20)
+            if (randValue < 15)
             {
-                if (randValue < 10)
+                if (randValue < 7)
                 {
                     randX = randGen.Next(50, this.Height - 100);
-                    Rectangle planet = new Rectangle(-10, randX, 30, 5);
+                    Rectangle planet = new Rectangle(-10, randX, 30, 20);
                     planetListRight.Add(planet);
                 }
-                else if (randValue > 10)
+                else if (randValue > 7)
                 {
                     randX = randGen.Next(50, this.Height - 100);
-                    Rectangle planet = new Rectangle(700, randX, 30, 5);
+                    Rectangle planet = new Rectangle(700, randX, 30, 20);
                     planetListLeft.Add(planet);
                 }
             }
@@ -211,7 +218,7 @@ namespace Space_Game
         {
             for (int i = 0;i< planetListRight.Count; i++)
             {
-                if (planetListRight[i].X >= this.Width)
+                if (planetListRight[i].X > this.Width)
                 {
                     planetListRight.RemoveAt(i);
                 }
@@ -219,7 +226,7 @@ namespace Space_Game
 
             for (int i = 0; i< planetListLeft.Count; i++)
             {
-                if (planetListLeft[i].X < 0)
+                if (planetListLeft[i].X < -20)
                 {
                     planetListLeft.RemoveAt(i);
                 }
@@ -245,19 +252,25 @@ namespace Space_Game
             e.Graphics.DrawImage(Axis, player2);
             for(int i = 0; i< planetListRight.Count; i++)
             {
-                e.Graphics.FillRectangle (whiteBrush, planetListRight[i]);
+                e.Graphics.DrawImage (bulletRight, planetListRight[i]);
             }
 
             for (int i = 0; i < planetListLeft.Count; i++)
             {
-                e.Graphics.FillRectangle(whiteBrush, planetListLeft[i]);
+                e.Graphics.DrawImage(bulletLeft, planetListLeft[i]);
             }
-            e.Graphics.FillRectangle(whiteBrush, time);
+
+            if(gameTimer.Enabled == true)
+            {
+                e.Graphics.FillRectangle(whiteBrush, time);
+            }
+
         }
 
         private void gameTImer2_Tick(object sender, EventArgs e)
         {
             HandleTimer();
+            //Refresh();
         }
     }
 }
