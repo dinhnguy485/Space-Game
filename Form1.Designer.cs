@@ -32,12 +32,13 @@
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.player1Label = new System.Windows.Forms.Label();
             this.player2Label = new System.Windows.Forms.Label();
-            this.gameTImer2 = new System.Windows.Forms.Timer(this.components);
+            this.gameTimer2 = new System.Windows.Forms.Timer(this.components);
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.subtitleLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameTimer
             // 
-            this.gameTimer.Enabled = true;
             this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
@@ -63,11 +64,34 @@
             this.player2Label.TabIndex = 1;
             this.player2Label.Text = ":Axis";
             // 
-            // gameTImer2
+            // gameTimer2
             // 
-            this.gameTImer2.Enabled = true;
-            this.gameTImer2.Interval = 200;
-            this.gameTImer2.Tick += new System.EventHandler(this.gameTImer2_Tick);
+            this.gameTimer2.Interval = 200;
+            this.gameTimer2.Tick += new System.EventHandler(this.gameTImer2_Tick);
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.titleLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.titleLabel.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.titleLabel.Location = new System.Drawing.Point(0, 143);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(686, 37);
+            this.titleLabel.TabIndex = 2;
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // subtitleLabel
+            // 
+            this.subtitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.subtitleLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.subtitleLabel.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.subtitleLabel.Location = new System.Drawing.Point(0, 192);
+            this.subtitleLabel.Name = "subtitleLabel";
+            this.subtitleLabel.Size = new System.Drawing.Size(686, 88);
+            this.subtitleLabel.TabIndex = 3;
+            this.subtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -75,6 +99,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(684, 386);
+            this.Controls.Add(this.subtitleLabel);
+            this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.player2Label);
             this.Controls.Add(this.player1Label);
             this.DoubleBuffered = true;
@@ -94,7 +120,9 @@
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label player1Label;
         private System.Windows.Forms.Label player2Label;
-        private System.Windows.Forms.Timer gameTImer2;
+        private System.Windows.Forms.Timer gameTimer2;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label subtitleLabel;
     }
 }
 

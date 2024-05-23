@@ -98,5 +98,14 @@
   <ItemGroup>
     <None Include="Resources\Plane1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane2Flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane1Flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collision.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

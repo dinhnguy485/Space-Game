@@ -81,6 +81,15 @@ namespace Space_Game.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Collision {
+            get {
+                return ResourceManager.GetStream("Collision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Plane1 {
@@ -93,9 +102,29 @@ namespace Space_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plane1Flip {
+            get {
+                object obj = ResourceManager.GetObject("plane1Flip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plane2 {
             get {
                 object obj = ResourceManager.GetObject("plane2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plane2Flip {
+            get {
+                object obj = ResourceManager.GetObject("plane2Flip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
