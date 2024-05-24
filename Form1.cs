@@ -41,7 +41,7 @@ namespace Space_Game
         int player1Score = 0;
         int player2Score = 0;
         int playerSpeed = 4;
-        int timeSpeed = 1;
+        int timeSpeed = 20;
         int randValue;
         int randX;
 
@@ -65,6 +65,7 @@ namespace Space_Game
         public MainForm()
         {
             InitializeComponent();
+            //start.Play(); 
         }
 
 
@@ -279,6 +280,7 @@ namespace Space_Game
             {
                 gameTimer.Stop();
                 gameTimer2.Stop();
+                end.Play();
                 Refresh();
             }
 
@@ -351,9 +353,9 @@ namespace Space_Game
             //paint the welcome screen
             if(gameTimer.Enabled == false && gameTimer2.Enabled == false && time.Y ==0)
             {
+                start.Play();
                 titleLabel.Text = "WW2 GAME";
                 subtitleLabel.Text = "Press Space to start, ESC to escape";
-                start.Play();
             }
 
             // run the game when timer is true
@@ -379,7 +381,6 @@ namespace Space_Game
             //runs the end screen when the games end.
             else
             {
-                end.Play();
                 if (player1Score == player2Score)
                 {
                     titleLabel.Text = "It's a tie";
