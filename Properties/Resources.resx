@@ -127,6 +127,12 @@
   <data name="Collision" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Collision.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="crash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crash.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="end" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\end.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Plane1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plane1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,5 +144,11 @@
   </data>
   <data name="plane2Flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plane2Flip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="welcome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\welcome.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="win" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\win.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -12,12 +12,17 @@ using System.Media;
 //Tri Nguyen_ISC3U
 //Space Game
 namespace Space_Game
-{
+{ 
     public partial class MainForm : Form
     {
 
         Random randGen = new Random();
-        SoundPlayer collision = new SoundPlayer(Properties.Resources.Collision);
+        SoundPlayer collision = new SoundPlayer(Properties.Resources.crash);
+        SoundPlayer start = new SoundPlayer(Properties.Resources.welcome);
+        SoundPlayer end = new SoundPlayer(Properties.Resources.end);
+        SoundPlayer win = new SoundPlayer(Properties.Resources.win);
+
+
 
         //Players and time.
         Rectangle player1 = new Rectangle(150, 375, 40, 35);
@@ -189,6 +194,7 @@ namespace Space_Game
                 else if (player1.Y <= 0)
                 {
                     player1.Y = 375;
+                    win.Play();
                     player1Score++;
                 }
 
@@ -206,6 +212,7 @@ namespace Space_Game
                 }
                 else if (player2.Y <= 0)
                 {
+                    win.Play();
                     player2.Y = 375;
                     player2Score++;
                 }
@@ -223,6 +230,7 @@ namespace Space_Game
                 }
                 else if (player1.Y <= 0)
                 {
+                    win.Play();
                     player1.Y = 375;
                     player1Score++;
                 }
@@ -238,6 +246,7 @@ namespace Space_Game
                 }
                 else if (player2.Y <= 0)
                 {
+                    win.Play();
                     player2.Y = 375;
                     player2Score++;
                 }
@@ -344,6 +353,7 @@ namespace Space_Game
             {
                 titleLabel.Text = "WW2 GAME";
                 subtitleLabel.Text = "Press Space to start, ESC to escape";
+                start.Play();
             }
 
             // run the game when timer is true
@@ -369,6 +379,7 @@ namespace Space_Game
             //runs the end screen when the games end.
             else
             {
+                end.Play();
                 if (player1Score == player2Score)
                 {
                     titleLabel.Text = "It's a tie";

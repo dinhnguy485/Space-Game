@@ -107,5 +107,17 @@
   <ItemGroup>
     <None Include="Resources\Collision.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\welcome.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\win.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crash.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\end.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
